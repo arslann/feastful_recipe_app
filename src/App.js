@@ -1,7 +1,7 @@
+import { SearchBar, Recipe, Carousel } from './components';
+
 function App() {
-  return (
-    <h1>Hello from App</h1>
-  );
+  return <SearchBar />;
 }
 
 export default App;
