@@ -1,0 +1,47 @@
+ul {
+  padding-inline-start: 0;
+}
+
+.feastful__navbar {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  background-color: rgb(228, 222, 222);
+  opacity: 0.7;
+  overflow: hidden;
+}
+
+.feastful__navbar-container {
+  display: flex;
+  justify-content: center;
+
+  text-decoration: none;
+  list-style: none;
+}
+
+.feastful__navbar-container a {
+  text-decoration: none;
+
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  display: block;
+  min-width: max-content;
+}
+
+.feastful__navbar-container li:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.feastful__navbar-container li:hover a {
+  color: inherit;
+}
+
+.feastful__navbar-container li {
+  padding: 1rem calc(5px + 1.5625vw);
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
