@@ -194,3 +194,21 @@
  * animation kenburns-top
  * ----------------------------------------
  */
+
+@media screen and (max-width: 550px) {
+  .feastful__header-container_title {
+    font-size: 2rem;
+  }
+  .feastful__header-container_title-text {
+    font-size: 1.4rem;
+    margin-top: 3rem;
+  }
+
+  .feastful__header-container_title-text p:nth-child(2) {
+    position: initial;
+  }
+
+  .feastful__header-container_button button {
+    font-size: 1.5rem;
+  }
+}

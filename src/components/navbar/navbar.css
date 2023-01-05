@@ -41,7 +41,14 @@ ul {
 }
 
 .feastful__navbar-container li {
-  padding: 1rem calc(5px + 1.5625vw);
+  padding: 1rem calc(3px + 1.5625vw);
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
+}
+
+@media screen and (max-width: 550px) {
+  .feastful__navbar-container a {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
 }
