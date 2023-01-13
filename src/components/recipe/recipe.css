@@ -1,0 +1,91 @@
+.feastful__recipe {
+  display: flex;
+  flex-direction: row;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.feastful__recipe-image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feastful__recipe-image img {
+  max-width: 100%;
+  min-width: 300px;
+  height: auto;
+  text-align: center;
+}
+
+.feastful__recipe-image img:hover {
+  cursor: pointer;
+}
+.feastful__recipe-texts {
+  width: 50%;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 40px;
+
+  color: var(--text-primary);
+  font-family: 'Roboto', sans-serif;
+}
+
+.feastful__recipe.reversed .feastful__recipe-texts {
+  padding-left: 0;
+}
+
+.feastful__recipe-texts-time-icon {
+  display: inline;
+}
+
+.feastful__recipe-text-title {
+  margin-bottom: 1rem;
+}
+
+.feastful__recipe-text-title a {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.feastful__recipe-text-title a:hover {
+  color: rgb(17, 150, 150);
+  cursor: pointer;
+}
+
+.feastful__recipe-texts-time {
+  font-size: 1rem;
+  color: #17191a;
+  font-weight: 800;
+}
+.feastful__recipe-texts-text {
+  margin-top: 1.3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .feastful__recipe {
+    flex-direction: column;
+  }
+
+  .feastful__recipe-image {
+    width: 100%;
+  }
+
+  .feastful__recipe-texts {
+    width: 100%;
+    padding: 40px 0px;
+  }
+
+  .feastful__recipe-text-title a {
+    font-size: 1.8rem;
+  }
+
+  .feastful__recipe-texts-time {
+    font-size: 0.8rem;
+  }
+}

@@ -1,14 +1,13 @@
 import { SearchBar, Recipe, Carousel, Footer } from './components';
 import { Header, RecipeContainer } from './containers';
-import './App.css'
+import './App.css';
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <Header></Header>
-
-      <RecipeContainer></RecipeContainer>
-
+      <Outlet />
       <Footer></Footer>
     </>
   );
