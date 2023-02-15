@@ -1,0 +1,97 @@
+.feastful__searchcontainer {
+  max-width: 1140px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+.feastful__searchcontainer-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #919699;
+}
+.feastful__searchcontainer-url {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #919699;
+}
+
+.icon {
+  display: inline;
+}
+
+.feastful__searchcontainer-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+
+  margin-top: 2rem;
+}
+.btn {
+  padding: 0.6rem 1.2rem;
+  color: #bbbbbb;
+  border: 1px solid #dddddd;
+  background-color: #fafafa;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.btn:hover {
+  background-color: #5dc3d2;
+  color: #fff;
+}
+
+.feastful__searchcontainer_container {
+  margin-top: 2.5rem;
+}
+.feastful__searchcontainer_container-recipes {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.feastful__searchcontainer-pageNumbers {
+  width: 100%;
+  margin: 3.5rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feastful__searchcontainer-pageNumbers-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 0.6rem;
+}
+
+.feastful__searchcontainer-pageNumbers-list-num {
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+
+  padding: 0.5rem 1rem;
+
+  color: #adb1b2;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.feastful__searchcontainer-pageNumbers-list-num:hover {
+  background-color: black;
+  color: #fff;
+}
+
+@media screen and (max-width: 700px) {
+  .feastful__searchcontainer_container-recipes {
+    flex-direction: column;
+  }
+
+  .feastful__recipe.recipeSizeM {
+    max-width: 100%;
+  }
+}

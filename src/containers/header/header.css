@@ -12,6 +12,11 @@
 
   align-items: center;
   justify-content: space-around;
+  position: relative;
+}
+
+.feastful__header-container_md {
+  height: 35vh;
 }
 
 .feastful__header-container_logo_container {
@@ -28,14 +33,24 @@
   cursor: pointer;
 }
 
-.feastful__header-container_logo_container h3 {
+.feastful__header-container_logo_container a {
   font-family: 'East Sea Dokdo', cursive;
 
   position: relative;
-  top: 30%;
 
   font-size: 2.5rem;
   font-weight: 400;
+
+  font-style: normal;
+  text-decoration: none;
+  color: #fff;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
 }
 
 .feastful__header-container_title {
@@ -89,6 +104,10 @@
 
 .feastful__header-container_button button:hover {
   transform: scale(1.1);
+}
+
+.hide {
+  display: none;
 }
 
 .text-focus-in {

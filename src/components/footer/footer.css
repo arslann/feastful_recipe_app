@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+.feastful__footer {
+  background-color: #5dc3d2;
+  margin-top: 3rem;
+}
+
+.feastfull__footer-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feastfull__footer-container-categories {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  float: left;
+}
+
+.feastfull__footer-container-categories-title {
+  font-size: 21px;
+  display: block;
+  margin-bottom: 1rem;
+}
+.feastfull__footer-container-categories-list {
+  padding-left: 1.2rem;
+}
+
+.feastfull__footer-container-categories-list li {
+  font-size: 15px;
+  line-height: 24px;
+  cursor: pointer;
+}

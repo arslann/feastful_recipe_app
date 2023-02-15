@@ -1,0 +1,86 @@
+.feastful__recipeinfo {
+  max-width: 1140px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 0 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #919699;
+}
+.feastful__recipeinfo-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #919699;
+}
+.feastful__recipeinfo-url {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #919699;
+}
+
+.feastful__recipeinfo-info {
+  margin: 2rem 0 0 2rem;
+  color: #919699;
+  font-size: 1rem;
+}
+
+.feastful__recipeinfo-info span {
+  margin-right: 1rem;
+}
+
+.feastful__recipeinfo-content {
+  margin-top: 2rem;
+}
+
+.feastful__recipeinfo-image {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.feastful__recipeinfo-image img {
+  max-width: 100%;
+  min-width: 440px;
+  height: auto;
+  text-align: center;
+}
+
+.icon {
+  display: inline;
+}
+
+.feastful__recipeinfo-ingredients {
+  margin-top: 40px;
+}
+
+.feastful__recipeinfo-ingredients-title {
+  color: #919699;
+}
+
+.feastful__recipeinfo-ingredients-list {
+  margin: 25px 0px 45px 0px;
+  border: 1px solid #e6ebed;
+  padding: 45px 35px 30px 35px;
+  background: #fafafa;
+  list-style: none;
+}
+
+.feastful__recipeinfo-ingredients-list li {
+  border-bottom: 1px dotted #dddddd;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  line-height: 1.2;
+}
+
+.feastful__recipeinfo-directions-list {
+  margin: 25px 0;
+}
+
+.feastful__recipeinfo-directions-list li {
+  margin-bottom: 20px;
+}
+
+.feastful__recipeinfo-directions-list li::marker {
+  color: #5dc3d2;
+}

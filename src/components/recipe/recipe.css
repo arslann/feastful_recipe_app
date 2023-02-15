@@ -3,6 +3,19 @@
   flex-direction: row;
 }
 
+.feastful__recipe.recipeSizeM {
+  justify-content: center;
+  max-width: 45%;
+}
+
+.feastful__recipe.recipeSizeM .feastful__recipe-texts-text {
+  display: none;
+}
+
+.feastful__recipe.recipeSizeM .feastful__recipe-text-title {
+  font-size: 1.4rem;
+}
+
 .reversed {
   flex-direction: row-reverse;
 }
@@ -21,6 +34,15 @@
   text-align: center;
 }
 
+.feastful__recipe.recipeSizeM .feastful__recipe-image img {
+  min-width: 150px;
+}
+
+.feastful__recipe.recipeSizeM .feastful__recipe-texts {
+  width: 25%;
+  min-width: 200px;
+}
+
 .feastful__recipe-image img:hover {
   cursor: pointer;
 }
@@ -29,7 +51,7 @@
   min-width: 340px;
   display: flex;
   flex-direction: column;
-  padding: 40px 40px;
+  padding: 2rem 2rem;
 
   color: var(--text-primary);
   font-family: 'Roboto', sans-serif;
@@ -47,13 +69,15 @@
   margin-bottom: 1rem;
 }
 
-.feastful__recipe-text-title a {
+.feastful__recipe-text-title .title {
   font-size: 2.5rem;
   font-weight: 900;
   line-height: 1.1;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
-.feastful__recipe-text-title a:hover {
+.feastful__recipe-text-title .title:hover {
   color: rgb(17, 150, 150);
   cursor: pointer;
 }
@@ -65,27 +89,29 @@
 }
 .feastful__recipe-texts-text {
   margin-top: 1.3rem;
+  max-height: 150px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 700px) {
-  .feastful__recipe {
+  .feastful__recipe.recipeSizeL {
     flex-direction: column;
   }
 
-  .feastful__recipe-image {
+  .feastful__recipe.recipeSizeL .feastful__recipe-image {
     width: 100%;
   }
 
-  .feastful__recipe-texts {
+  .feastful__recipe.recipeSizeL .feastful__recipe-texts {
     width: 100%;
     padding: 40px 0px;
   }
 
-  .feastful__recipe-text-title a {
+  .feastful__recipe.recipeSizeL .feastful__recipe-text-title a {
     font-size: 1.8rem;
   }
 
-  .feastful__recipe-texts-time {
+  .feastful__recipe.recipeSizeL .feastful__recipe-texts-time {
     font-size: 0.8rem;
   }
 }
