@@ -1,10 +1,13 @@
-import { createContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const FoodContext = createContext();
 
 export const FoodProvider = ({ children }) => {
-  const [category, setCategory] = useState('');
-  const [recipes, setRecipes] = useState();
+  const [category, setCategory] = useState(null);
+  const [recipes, setRecipes] = useState(null);
+  const [recipeId, setRecipeId] = useState(null);
+  const [recipe, setRecipe] = useState({});
+  const [offset, setOffset] = useState(0);
 
   const apiKey = '4992e3a278164c4cbbb0fefbaf9f3b32';
 
@@ -23,16 +26,63 @@ export const FoodProvider = ({ children }) => {
       .catch((error) => console.log('error', error));
   };
 
+  const fetchRecipesByCategory = () => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    };
+
+    fetch(
+      `https://api.spoonacular.com/recipes/complexSearch?number=6&type=${category}&offset=${offset}&apiKey=${apiKey}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setRecipes(result))
+      .catch((error) => console.log('error', error));
+  };
+
+  const fetchRecipe = () => {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    };
+
+    fetch(
+      `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${apiKey}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => setRecipe(result))
+      .catch((error) => console.log('error', error));
+  };
+
+  // fetch random recipes
   useEffect(() => {
     fetchRandomRecipes();
   }, []);
 
-  console.log(recipes);
+  // fetch recipes by category
+  useEffect(() => {
+    if(!category) return;
+
+    fetchRecipesByCategory();
+  }, [category])
+
+  // fetch recipe by id
+  useEffect(() => {
+    if (!recipeId) return;
+
+    fetchRecipe();
+  }, [recipeId]);
+
+  // console.log(recipes);
   return (
     <FoodContext.Provider
       value={{
+        recipe,
         recipes,
         setCategory,
+        setRecipeId,
       }}
     >
       {children}

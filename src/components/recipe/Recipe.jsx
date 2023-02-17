@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
 function Recipe({
+  id,
   image,
   title,
-  description,
+  description = '',
   cookingminutes,
   isReverse = false,
   size = 'L',
@@ -24,7 +25,9 @@ function Recipe({
       </div>
       <div className="feastful__recipe-texts">
         <div className="feastful__recipe-text-title">
-          <Link className="title">{title}</Link>
+          <Link className="title" to={`/recipes/` + id}>
+            {title}
+          </Link>
         </div>
         <div className="feastful__recipe-texts-time">
           <AiOutlineClockCircle className="feastful__recipe-texts-time-icon" />

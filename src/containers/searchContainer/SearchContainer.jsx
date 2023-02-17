@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './searchContainer.css';
 import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { Recipe } from '../../components';
+import FoodContext from '../../context/FoodContext';
+
 function SearchContainer() {
+  const { recipes, setCategory } = useContext(FoodContext);
+
+  console.log(recipes);
+
+  if (!recipes || !recipes.results) return <h1>Loading...</h1>;
+
   return (
     <div className="feastful__searchcontainer">
       <div className="feastful__searchcontainer-links">
@@ -16,34 +24,72 @@ function SearchContainer() {
           <h1>Dessert</h1>
         </div>
         <div className="feastful__searchcontainer-buttons">
-          <Link to="/" className="btn">
-            Lunch
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('breakfast')}
+          >
+            Breakfast
           </Link>
-          <Link to="/" className="btn">
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('appetizer')}
+          >
             Appetizer
           </Link>
-          <Link to="/" className="btn">
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('dessert')}
+          >
             Dessert
           </Link>
-          <Link to="/" className="btn">
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('main course')}
+          >
             Main Dishes
           </Link>
-          <Link to="/" className="btn">
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('side dish')}
+          >
             Side Dishes
+          </Link>
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('salad')}
+          >
+            salad
+          </Link>
+          <Link
+            to="/recipes"
+            className="btn"
+            onClick={() => setCategory('beverage')}
+          >
+            beverage
           </Link>
         </div>
       </div>
 
       <div className="feastful__searchcontainer_container">
         <div className="feastful__searchcontainer_container-recipes">
-          <Recipe size="M" />
-          <Recipe size="M" />
-          <Recipe size="M" />
-          <Recipe size="M" />
-          <Recipe size="M" />
-          <Recipe size="M" />
-          <Recipe size="M" />
-          <Recipe size="M" />
+          {recipes.results.map((recipe, id) => {
+            return (
+              <Recipe
+                id={recipe.id}
+                image={recipe.image}
+                title={recipe.title}
+                cookingminutes={recipe.readyInMinutes}
+                key={recipe.id}
+                size="M"
+              />
+            );
+          })}
         </div>
       </div>
 

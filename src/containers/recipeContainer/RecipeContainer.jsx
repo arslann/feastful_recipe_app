@@ -6,7 +6,7 @@ import FoodContext from '../../context/FoodContext';
 function RecipeContainer() {
   const { recipes } = useContext(FoodContext);
 
-  if (!recipes) return;
+  if (!recipes) return <h1>Loading...</h1>;
 
   return (
     <>
@@ -17,11 +17,13 @@ function RecipeContainer() {
 
           return (
             <Recipe
+              id={recipe.id}
               image={recipe.image}
               title={recipe.title}
               description={recipe.summary}
               isReverse={isReverse}
               cookingminutes={recipe.readyInMinutes}
+              key={recipe.id}
             />
           );
         })}

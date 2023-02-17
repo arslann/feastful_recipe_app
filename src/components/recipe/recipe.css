@@ -12,6 +12,10 @@
   display: none;
 }
 
+.feastful__recipe.recipeSizeM .feastful__recipe-texts-time {
+  display: none;
+}
+
 .feastful__recipe.recipeSizeM .feastful__recipe-text-title {
   font-size: 1.4rem;
 }
@@ -39,10 +43,9 @@
 }
 
 .feastful__recipe.recipeSizeM .feastful__recipe-texts {
-  width: 25%;
+  /* width: 25%; */
   min-width: 200px;
 }
-
 .feastful__recipe-image img:hover {
   cursor: pointer;
 }
@@ -70,9 +73,9 @@
 }
 
 .feastful__recipe-text-title .title {
-  font-size: 2.5rem;
+  font-size: 1rem;
   font-weight: 900;
-  line-height: 1.1;
+  /* line-height: 1.1; */
   color: var(--text-primary);
   text-decoration: none;
 }
