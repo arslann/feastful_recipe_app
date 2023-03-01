@@ -5,6 +5,7 @@ const FoodContext = createContext();
 export const FoodProvider = ({ children }) => {
   const [category, setCategory] = useState(null);
   const [recipes, setRecipes] = useState(null);
+  const [randomRecipes, setrandomRecipes] = useState(null);
   const [recipeId, setRecipeId] = useState(null);
   const [recipe, setRecipe] = useState({});
   const [offset, setOffset] = useState(0);
@@ -22,7 +23,7 @@ export const FoodProvider = ({ children }) => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((result) => setRecipes(result))
+      .then((result) => setrandomRecipes(result))
       .catch((error) => console.log('error', error));
   };
 
@@ -88,6 +89,7 @@ export const FoodProvider = ({ children }) => {
         category,
         offset,
         setOffset,
+        randomRecipes,
       }}
     >
       {children}

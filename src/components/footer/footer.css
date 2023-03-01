@@ -36,3 +36,8 @@
   line-height: 24px;
   cursor: pointer;
 }
+
+.footerLink {
+  text-decoration: none;
+  color: #fff;
+}

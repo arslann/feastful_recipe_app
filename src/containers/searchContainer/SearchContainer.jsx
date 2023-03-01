@@ -13,7 +13,9 @@ function SearchContainer() {
 
   // set max page numbers for pagination
   useEffect(() => {
-    setMaxPage(recipes.totalResults);
+    if (recipes && recipes.totalResults) {
+      setMaxPage(recipes.totalResults);
+    }
   }, [recipes]);
 
   // console.log(maxPage);
@@ -102,6 +104,7 @@ function SearchContainer() {
         </div>
       </div>
 
+      {/* // pagination */}
       <div className="feastful__searchcontainer-pageNumbers">
         <ul className="feastful__searchcontainer-pageNumbers-list">
           <li>
@@ -110,7 +113,10 @@ function SearchContainer() {
                 type="button"
                 href="#searchcontainer"
                 className="feastful__searchcontainer-pageNumbers-list-num"
-                onClick={() => setCurrentPage(currentPage - 1)}
+                onClick={() => {
+                  setCurrentPage(currentPage - 1);
+                  setOffset(offset + -1);
+                }}
               >
                 {currentPage > 1 && currentPage - 1}
               </a>
