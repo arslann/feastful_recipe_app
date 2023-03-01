@@ -63,16 +63,18 @@ export const FoodProvider = ({ children }) => {
 
   // fetch recipes by category
   useEffect(() => {
-    if(!category) return;
+    if (!category) return;
 
     fetchRecipesByCategory();
-  }, [category])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category, offset]);
 
   // fetch recipe by id
   useEffect(() => {
     if (!recipeId) return;
 
     fetchRecipe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [recipeId]);
 
   // console.log(recipes);
@@ -83,6 +85,9 @@ export const FoodProvider = ({ children }) => {
         recipes,
         setCategory,
         setRecipeId,
+        category,
+        offset,
+        setOffset,
       }}
     >
       {children}

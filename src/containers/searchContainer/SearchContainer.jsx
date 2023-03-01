@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './searchContainer.css';
 import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -6,14 +6,22 @@ import { Recipe } from '../../components';
 import FoodContext from '../../context/FoodContext';
 
 function SearchContainer() {
-  const { recipes, setCategory } = useContext(FoodContext);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
+  const { recipes, category, setCategory, setOffset, offset } =
+    useContext(FoodContext);
 
-  console.log(recipes);
+  // set max page numbers for pagination
+  useEffect(() => {
+    setMaxPage(recipes.totalResults);
+  }, [recipes]);
+
+  // console.log(maxPage);
 
   if (!recipes || !recipes.results) return <h1>Loading...</h1>;
 
   return (
-    <div className="feastful__searchcontainer">
+    <div className="feastful__searchcontainer" id="searchcontainer">
       <div className="feastful__searchcontainer-links">
         <div className="feastful__searchcontainer-url">
           <p>
@@ -21,7 +29,7 @@ function SearchContainer() {
           </p>
         </div>
         <div className="feastful__searchcontainer-title">
-          <h1>Dessert</h1>
+          <h1>{category}</h1>
         </div>
         <div className="feastful__searchcontainer-buttons">
           <Link
@@ -78,47 +86,58 @@ function SearchContainer() {
 
       <div className="feastful__searchcontainer_container">
         <div className="feastful__searchcontainer_container-recipes">
-          {recipes.results.map((recipe, id) => {
-            return (
-              <Recipe
-                id={recipe.id}
-                image={recipe.image}
-                title={recipe.title}
-                cookingminutes={recipe.readyInMinutes}
-                key={recipe.id}
-                size="M"
-              />
-            );
-          })}
+          {recipes.results &&
+            recipes.results.map((recipe, id) => {
+              return (
+                <Recipe
+                  id={recipe.id}
+                  image={recipe.image}
+                  title={recipe.title}
+                  cookingminutes={recipe.readyInMinutes}
+                  key={recipe.id}
+                  size="M"
+                />
+              );
+            })}
         </div>
       </div>
 
       <div className="feastful__searchcontainer-pageNumbers">
         <ul className="feastful__searchcontainer-pageNumbers-list">
           <li>
-            <button className="feastful__searchcontainer-pageNumbers-list-num">
-              1
+            {currentPage > 1 && (
+              <a
+                type="button"
+                href="#searchcontainer"
+                className="feastful__searchcontainer-pageNumbers-list-num"
+                onClick={() => setCurrentPage(currentPage - 1)}
+              >
+                {currentPage > 1 && currentPage - 1}
+              </a>
+            )}
+          </li>
+          <li>
+            <button
+              className="feastful__searchcontainer-pageNumbers-list-num selected"
+              onClick={() => setCurrentPage(currentPage)}
+            >
+              {currentPage}
             </button>
           </li>
           <li>
-            <button className="feastful__searchcontainer-pageNumbers-list-num">
-              2
-            </button>
-          </li>
-          <li>
-            <button className="feastful__searchcontainer-pageNumbers-list-num">
-              3
-            </button>
-          </li>
-          <li>
-            <button className="feastful__searchcontainer-pageNumbers-list-num">
-              4
-            </button>
-          </li>
-          <li>
-            <button className="feastful__searchcontainer-pageNumbers-list-num">
-              Next
-            </button>
+            {currentPage + 1 < maxPage && (
+              <a
+                type="button"
+                href="#searchcontainer"
+                className="feastful__searchcontainer-pageNumbers-list-num"
+                onClick={() => {
+                  setCurrentPage(currentPage + 1);
+                  setOffset(offset + 1);
+                }}
+              >
+                {currentPage + 1}
+              </a>
+            )}
           </li>
         </ul>
       </div>

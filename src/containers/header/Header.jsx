@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.css';
 import Navbar from '../../components/navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const isFullWidth = window.location.pathname === '/';
@@ -32,7 +33,9 @@ function Header() {
             !isFullWidth ? 'hide' : ''
           }`}
         >
-          <button>Browse</button>
+          <button>
+            <a href="/">Browse</a>
+          </button>
         </div>
         <Navbar />
       </div>
