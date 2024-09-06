@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](https://i.ibb.co/18N0t3D/Euphonious-khapse-5135f3-Generic-Laptop-05-03-2023-at-S-10-17-48.jpg)
+![screenshot](https://i.hizliresim.com/cmqaxwc.png)
 
 ### Built With
 
